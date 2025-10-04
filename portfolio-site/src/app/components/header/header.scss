@@ -2,6 +2,7 @@ header {
     position: fixed;
     transition: all 1s ease; 
     transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
 a {
@@ -10,41 +11,47 @@ a {
     height: 40px; 
     justify-content: center;
     align-items: center; 
-    color: rgb(0, 0, 0);
+    color: white;
     text-decoration: none;
     position: fixed;
-    transition-property: transform, background-color, padding-left;
-    transition-delay: 0ms, 0ms, 0ms;
-    transition-duration: 1s, 200ms, 1s;
-    transition-timing-function: ease, ease, ease;
+    transition-property: transform, background-color, padding-left, padding-right;
+    transition-delay: 0ms, 0ms, 0ms, 0ms;
+    transition-duration: 1s, 200ms, 1s, 1s;
+    transition-timing-function: ease, ease, ease, ease;
 }
 
 a.active {
-    background-color: rgba(132, 241, 255, 0.599);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 nav a:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-a.home-btn h1 {
-    white-space: nowrap;
+a.home-btn {
+    height: 60px;
+    width: 0px;
+    h1 {
+        white-space: nowrap;
+    }   
 }
 
+
+// Styles when the header is in the center of the screen
 header.center-screen {
-    top: 40%;
+    top: 50%;
     left: 50%;
     
-    a {
-        padding-left: 0px;
-    }
-    
     a.home-btn {
-        transform: translate(-50%, -400%) scale(2);
+        transform: translate(-50%, -300%) scale(3);
+        padding-left: 0px;
+        padding-right: 0px;
         pointer-events: none;
     }
-
+    
+    nav a {
+        padding-left: 0px;
+    }
     a.gallery-btn {
         transform: translate(-250%, -50%);
     }
@@ -70,18 +77,21 @@ header.center-screen {
     }
 }
 
+// Styles when the header is on the left side of the screen
 header.left-screen {
     top: 50%;
     left: 0%;
 
-    a {
-        padding-left: 100px;
-    }
-
     a.home-btn {
         transform: translate(0%, -400%) scale(1);
+        padding-left: 125px;
+        padding-right: 125px;
+        background-color: rgba(0, 0, 0, 0.5);
     }
-
+    
+    nav a {
+        padding-left: 100px;
+    }
     a.gallery-btn {
         transform: translate(0%, -250%);
     }
@@ -107,6 +117,8 @@ header.left-screen {
     }
 }
 
+
+// Header background overlay
 div {
     position: fixed;
     top: 0%;
