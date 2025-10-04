@@ -1,10 +1,10 @@
 import { Component, signal, inject, OnInit } from '@angular/core';
-import { RouterLink, Router, NavigationEnd } from '@angular/router';
+import { RouterLink, Router, NavigationEnd, RouterLinkActive } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-header',
-    imports: [RouterLink],
+    imports: [RouterLink, RouterLinkActive],
     templateUrl: './header.html',
     styleUrl: './header.scss',
 })

@@ -1,30 +1,129 @@
 header {
-    position: fixed; /* stays on top while scrolling */
-    transition: all 1.5s ease; /* smooth movement */
-    padding: 20px;
-    z-index: 1000;
+    position: fixed;
+    transition: all 1s ease; 
+    transform: translate(-50%, -50%);
 }
 
 a {
-    padding: 10px;
+    display: flex; 
+    width: 150px;
+    height: 40px; 
+    justify-content: center;
+    align-items: center; 
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    position: fixed;
+    transition-property: transform, background-color, padding-left;
+    transition-delay: 0ms, 0ms, 0ms;
+    transition-duration: 1s, 200ms, 1s;
+    transition-timing-function: ease, ease, ease;
 }
 
-/* Home page: center of the screen */
-.center-screen {
-    top: 50%;
+a.active {
+    background-color: rgba(132, 241, 255, 0.599);
+    color: white;
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+a.home-btn h1 {
+    white-space: nowrap;
+}
+
+header.center-screen {
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    
+    a {
+        padding-left: 0px;
+    }
+    
+    a.home-btn {
+        transform: translate(-50%, -400%) scale(2);
+        pointer-events: none;
+    }
+
+    a.gallery-btn {
+        transform: translate(-250%, -50%);
+    }
+    a.about-btn {
+        transform: translate(-150%, -50%);
+        transition-delay: 50ms, 0ms;
+        transition-duration: 1s, 200ms, 950ms;
+    }
+    a.shop-btn {
+        transform: translate(-50%, -50%);
+        transition-delay: 100ms, 0ms;
+        transition-duration: 1s, 200ms, 900ms;
+    }
+    a.comission-btn {
+        transform: translate(50%, -50%);
+        transition-delay: 150ms, 0ms;
+        transition-duration: 1s, 200ms, 850ms;
+    }
+    a.contact-btn {
+        transform: translate(150%, -50%);
+        transition-delay: 200ms, 0ms;
+        transition-duration: 1s, 200ms, 800ms;
+    }
 }
 
-/* Other pages: middle left */
-.left-screen {
+header.left-screen {
     top: 50%;
-    left: 20px; /* distance from the left edge */
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    left: 0%;
+
+    a {
+        padding-left: 100px;
+    }
+
+    a.home-btn {
+        transform: translate(0%, -400%) scale(1);
+    }
+
+    a.gallery-btn {
+        transform: translate(0%, -250%);
+    }
+    a.about-btn {
+        transform: translate(0%, -150%);
+        transition-delay: 50ms, 0ms;
+        transition-duration: 1s, 200ms, 950ms;
+    }
+    a.shop-btn {
+        transform: translate(0%, -50%);
+        transition-delay: 100ms, 0ms;
+        transition-duration: 1s, 200ms, 900ms;
+    }
+    a.comission-btn {
+        transform: translate(0%, 50%);
+        transition-delay: 150ms, 0ms;
+        transition-duration: 1s, 200ms, 850ms;
+    }
+    a.contact-btn {
+        transform: translate(0%, 150%);
+        transition-delay: 200ms, 0ms;
+        transition-duration: 1s, 200ms, 800ms;
+    }
+}
+
+div {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    transition-property: background, padding-right;
+    transition-duration: 1s, 1s;
+    transition-timing-function: ease, ease;
+    z-index: -1;
+}
+
+div.center-screen {
+    padding-right: 0px;
+    background: rgba(0, 0, 0, 0);
+}
+
+div.left-screen {
+    padding-right: 250px;
+    background: rgba(0, 0, 0, 0.422);
 }

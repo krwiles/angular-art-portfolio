@@ -1,6 +1,12 @@
 <header [class]="headerClass()">
-    <nav [class]="headerClass()">
-        <a routerLink="/">Home</a>
-        <a routerLink="/gallery">Gallery</a>
+    <a class="home-btn" routerLink="/"><h1>Artist</h1></a>
+    <nav>
+        <a class="gallery-btn" routerLink="/gallery" routerLinkActive="active">Gallery</a>
+        <a class="about-btn" routerLink="/about" routerLinkActive="active">About</a>
+        <a class="shop-btn" routerLink="/shop" routerLinkActive="active">Shop</a>
+        <a class="comission-btn" routerLink="/comission" routerLinkActive="active">Comission</a>
+        <a class="contact-btn" routerLink="/contact" routerLinkActive="active">Contact</a>
     </nav>
 </header>
+<div [class]="headerClass()"></div>
+
