@@ -8,5 +8,12 @@ import { GalleryContent } from '../components/gallery-content/gallery-content';
     styleUrl: './gallery.scss',
 })
 export class Gallery {
+  showGalleryContent = false;
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.showGalleryContent = true;
+    }, 1000); // 1 second delay
+  }
 
 }

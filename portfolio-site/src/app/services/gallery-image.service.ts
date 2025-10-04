@@ -21,6 +21,7 @@ export class GalleryImageService {
     { src: 'assets/images/Illustration.png', alt: 'Illustration' },
     { src: 'assets/images/Illustration4.png', alt: 'Illustration4' },
     { src: 'assets/images/POVcompost.png', alt: 'POVcompost' },
-    { src: 'assets/images/SoLongGawrGura.png', alt: 'SoLongGawrGura' }
+    { src: 'assets/images/SoLongGawrGura.png', alt: 'SoLongGawrGura' },
+    { src: 'assets/images/smolcalli.png', alt: 'smolcalli' },
     ];
 }
