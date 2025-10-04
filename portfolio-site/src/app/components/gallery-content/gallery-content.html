@@ -1,0 +1,5 @@
+<section class="gallery-grid">
+    @for (galleryImage of galleryImages(); track galleryImage.src) {
+        <img ngSrc="{{ galleryImage.src }}" alt="{{ galleryImage.alt }}" height="300" width="300" loading="lazy"/>
+    }
+</section>

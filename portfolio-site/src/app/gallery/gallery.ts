@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { GalleryContent } from '../components/gallery-content/gallery-content';
 
 @Component({
     selector: 'app-gallery',
-    imports: [],
+    imports: [GalleryContent],
     templateUrl: './gallery.html',
     styleUrl: './gallery.scss',
 })
-export class Gallery {}
+export class Gallery {
+
+}
