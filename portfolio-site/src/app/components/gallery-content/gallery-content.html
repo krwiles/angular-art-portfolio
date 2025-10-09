@@ -1,13 +1,16 @@
-<section class="gallery-grid">
-    @for (galleryImage of galleryImages(); track galleryImage.src; let i = $index;) {
-        <img
-            class="enter-image"
-            [style.animationDelay]="(0.5 + (i * 0.2)) + 's'"
-            ngSrc="{{ galleryImage.src }}"
-            alt="{{ galleryImage.alt }}"
-            height="300"
-            width="{{ galleryImage.getScaledWidthFromHeight(300) }}"
-            loading="lazy"
-        />
-    }
-</section>
+@if (showGalleryContent()) {
+    <section class="gallery-grid" animate.leave="leave-grid">
+        @for (galleryImage of galleryImages(); track galleryImage.src; let i = $index;) {
+            <img
+                animate.enter="enter-image"
+                animate.leave="leave-image"
+                [style.animationDelay]="(i * 0.15) + 's'"
+                ngSrc="{{ galleryImage.src }}"
+                alt="{{ galleryImage.alt }}"
+                height="250"
+                width="{{ galleryImage.getScaledWidthFromHeight(250) }}"
+                loading="lazy"
+            />
+        }
+    </section>
+}

@@ -5,7 +5,11 @@ section.gallery-grid {
 	justify-content: center;
 	gap: 10px;
 	padding: 20px;
-	//position: relative; // optional, for stacking context
+}
+
+.leave-grid {
+	opacity: 1;
+	animation: fade-out 0.5s forwards;
 }
 
 img {
@@ -13,21 +17,27 @@ img {
 	border-radius: 5px;
 	box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 	transition: transform 0.3s, box-shadow 0.3s;
-	//position: relative; // optional, for stacking context
 }
 
 .enter-image {
 	opacity: 0;
-	animation: slide-fade 0.6s forwards;
+	animation: slide-in 0.5s forwards;
 }
 
-@keyframes slide-fade {
+@keyframes slide-in {
 	from {
 		opacity: 0;
-		transform: translateY(600px);
+		transform: translateY(300px) scale(0);
 	}
 	to {
 		opacity: 1;
-		transform: translateY(0);
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+		transform: translateY(100px) scale(0.7);
 	}
 }

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { GalleryImageService } from '../../services/gallery-image.service';
 import { GalleryImage } from '../../model/gallery-image';
 import { NgOptimizedImage } from '@angular/common';
@@ -13,6 +13,8 @@ export class GalleryContent {
     galleryImageService = inject(GalleryImageService);
     galleryImages = signal<GalleryImage[]>([]);
     
+    readonly showGalleryContent = input<boolean>();
+
     ngOnInit() {
       const images = this.galleryImageService.galleryImages.slice();
       this.shuffle(images);
@@ -25,4 +27,6 @@ export class GalleryContent {
         [array[i], array[j]] = [array[j], array[i]];
       }
     }
+
+
 }

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { Gallery } from './gallery/gallery';
+import { LeaveAnimationGuard } from './guards/leave-animation.guard';
 
 export const routes: Routes = [
     {
@@ -12,5 +13,6 @@ export const routes: Routes = [
         path: 'gallery',
         title: 'Gallery',
         component: Gallery,
+        canDeactivate: [LeaveAnimationGuard]
     },
 ];
