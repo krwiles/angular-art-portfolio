@@ -14,6 +14,15 @@ export class GalleryContent {
     galleryImages = signal<GalleryImage[]>([]);
     
     ngOnInit() {
-        this.galleryImages.set(this.galleryImageService.galleryImages);
+      const images = this.galleryImageService.galleryImages.slice();
+      this.shuffle(images);
+      this.galleryImages.set(images);
+    }
+
+    shuffle(array: any[]) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));  // Math.floor never returns 1.0, hence the i + 1
+        [array[i], array[j]] = [array[j], array[i]];
+      }
     }
 }
