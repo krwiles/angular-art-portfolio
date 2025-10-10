@@ -1,3 +1,11 @@
 <main class="gallery-container">
-	<app-gallery-content [showGalleryContent]="showGalleryContent()" />
+	<div class="content-wrapper">
+		@if (showGalleryContent()) {
+			<div animate.enter="enter-text" animate.leave="leave-text">
+				<h1>DIGITAL ART GALLERY</h1>
+				<p>Explore a curated collection of digital art pieces I created.</p>
+			</div>
+		}
+		<app-gallery-content [showGalleryContent]="showGalleryContent()" />
+	</div>
 </main>

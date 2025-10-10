@@ -7,8 +7,8 @@ header {
 
 a {
     display: flex; 
-    width: 150px;
-    height: 40px; 
+    width: 9rem;
+    height: 2.5rem; 
     justify-content: center;
     align-items: center; 
     color: white;
@@ -22,6 +22,7 @@ a {
 
 a.active {
     background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.33);
 }
 
 nav a:hover {
@@ -29,8 +30,8 @@ nav a:hover {
 }
 
 a.home-btn {
-    height: 60px;
-    width: 0px;
+    height: 4rem;
+    width: 0;
     h1 {
         white-space: nowrap;
     }   
@@ -44,13 +45,13 @@ header.center-screen {
     
     a.home-btn {
         transform: translate(-50%, -300%) scale(3);
-        padding-left: 0px;
-        padding-right: 0px;
+        padding-left: 0;
+        padding-right: 0;
         pointer-events: none;
     }
     
     nav a {
-        padding-left: 0px;
+        padding-left: 0;
     }
     a.gallery-btn {
         transform: translate(-250%, -50%);
@@ -84,13 +85,13 @@ header.left-screen {
 
     a.home-btn {
         transform: translate(0%, -400%) scale(1);
-        padding-left: 125px;
-        padding-right: 125px;
-        background-color: rgba(0, 0, 0, 0.5);
+        padding-left: 7.5rem;
+        padding-right: 7.5rem;
+        background-color: rgba(0, 0, 0, 0);
     }
     
     nav a {
-        padding-left: 100px;
+        padding-left: 6rem;
     }
     a.gallery-btn {
         transform: translate(0%, -250%);
@@ -124,18 +125,20 @@ div {
     top: 0%;
     left: 0%;
     height: 100%;
-    transition-property: background, padding-right;
-    transition-duration: 1s, 1s;
-    transition-timing-function: ease, ease;
+    transition-property: background, padding-right, box-shadow;
+    transition-duration: 1s, 1s, 1s;
+    transition-timing-function: ease, ease, ease;
     z-index: -1;
 }
 
 div.center-screen {
-    padding-right: 0px;
+    padding-right: 0;
     background: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 div.left-screen {
-    padding-right: 250px;
-    background: rgba(0, 0, 0, 0.5);
+    padding-right: 15rem;
+    background: rgba(0, 0, 0, 0.666);
+    box-shadow: 0 0 2rem rgb(0, 0, 0);
 }

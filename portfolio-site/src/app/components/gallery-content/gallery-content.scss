@@ -2,9 +2,11 @@
 section.gallery-grid {
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
 	justify-content: left;
-	gap: 20px;
-	padding: 40px;
+	gap: 2rem;
+	padding: 0;
+	margin: 0;
 }
 
 .leave-grid {
@@ -18,8 +20,8 @@ section.gallery-grid {
 }
 
 .gallery-image:hover {
-	transform: scale(1.05);
-	box-shadow: 0 0 10px rgb(255, 255, 255);
+	transform: scale(1.02);
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.473);
 	cursor: pointer;
 }
 
