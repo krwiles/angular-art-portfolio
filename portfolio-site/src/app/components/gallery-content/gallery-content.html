@@ -2,15 +2,30 @@
     <section class="gallery-grid" animate.leave="leave-grid">
         @for (galleryImage of galleryImages(); track galleryImage.src; let i = $index;) {
             <img
+                class="gallery-image"
                 animate.enter="enter-image"
-                animate.leave="leave-image"
                 [style.animationDelay]="(i * 0.15) + 's'"
                 ngSrc="{{ galleryImage.src }}"
                 alt="{{ galleryImage.alt }}"
                 height="250"
                 width="{{ galleryImage.getScaledWidthFromHeight(250) }}"
                 loading="lazy"
+                (click)="showImage(galleryImage)"
             />
         }
     </section>
+}
+
+@if (showLightBox()) {
+    <div class="lightbox" (click)="closeImage()">
+        <div class="lightbox-content" (click)="$event.stopPropagation()">
+            <img
+                class="lightbox-image"
+                src="{{ selectedImage()?.src }}"
+                alt="{{ selectedImage()?.alt }}"
+                loading="eager"
+            />
+            <button class="close-btn" (click)="closeImage()">×</button>
+        </div>
+    </div>
 }

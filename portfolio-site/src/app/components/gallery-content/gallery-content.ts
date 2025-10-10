@@ -12,6 +12,8 @@ import { NgOptimizedImage } from '@angular/common';
 export class GalleryContent {
     galleryImageService = inject(GalleryImageService);
     galleryImages = signal<GalleryImage[]>([]);
+    selectedImage = signal<GalleryImage | null>(null);
+    showLightBox = signal(false);
     
     readonly showGalleryContent = input<boolean>();
 
@@ -28,5 +30,13 @@ export class GalleryContent {
       }
     }
 
-
+    showImage(image: GalleryImage) {
+      this.selectedImage.set(image);
+      this.showLightBox.set(true);
+    }
+    
+    closeImage() {
+      this.showLightBox.set(false);
+      this.selectedImage.set(null);
+    }
 }

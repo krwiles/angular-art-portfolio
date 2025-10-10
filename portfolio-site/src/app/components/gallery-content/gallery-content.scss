@@ -2,9 +2,9 @@
 section.gallery-grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	gap: 10px;
-	padding: 20px;
+	justify-content: left;
+	gap: 20px;
+	padding: 40px;
 }
 
 .leave-grid {
@@ -12,16 +12,20 @@ section.gallery-grid {
 	animation: fade-out 0.5s forwards;
 }
 
-img {
-	border: 2px solid white;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.gallery-image {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-image:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 10px rgb(255, 255, 255);
+	cursor: pointer;
 }
 
 .enter-image {
 	opacity: 0;
-	animation: slide-in 0.5s forwards;
+	animation: slide-in 0.4s forwards;
 }
 
 @keyframes slide-in {
@@ -40,4 +44,44 @@ img {
 		opacity: 0;
 		transform: translateY(100px) scale(0.7);
 	}
+}
+
+
+.lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 80vw;
+  max-height: 90vh;
+  box-shadow: 0 0 50px rgb(0, 0, 0);
+  background: #222;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: -4rem;
+  font-size: 4rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close-btn:hover {
+  color: #ff4081;
 }
