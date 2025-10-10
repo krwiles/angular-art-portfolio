@@ -17,6 +17,8 @@ export class GalleryContent {
     
     readonly showGalleryContent = input<boolean>();
 
+    private scrollY = 0;
+
     ngOnInit() {
       const images = this.galleryImageService.galleryImages.slice();
       this.shuffle(images);
@@ -33,10 +35,22 @@ export class GalleryContent {
     showImage(image: GalleryImage) {
       this.selectedImage.set(image);
       this.showLightBox.set(true);
+
+      // Lock scroll
+      this.scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${this.scrollY}px`;
+      document.body.style.width = '100%';
     }
     
     closeImage() {
       this.showLightBox.set(false);
       this.selectedImage.set(null);
+
+      // Unlock scroll
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, this.scrollY); // Restore scroll position
     }
 }
