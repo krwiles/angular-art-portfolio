@@ -37,6 +37,10 @@ a.home-btn {
     }   
 }
 
+h2 {
+    transition: all 1s ease; 
+    position: absolute;
+}
 
 // Styles when the header is in the center of the screen
 header.center-screen {
@@ -75,6 +79,10 @@ header.center-screen {
         transform: translate(150%, -50%);
         transition-delay: 200ms, 0ms;
         transition-duration: 1s, 200ms, 800ms;
+    }
+    h2 {
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 
@@ -115,6 +123,10 @@ header.left-screen {
         transform: translate(0%, 150%);
         transition-delay: 200ms, 0ms;
         transition-duration: 1s, 200ms, 800ms;
+    }
+    h2 {
+        right: 1rem;
+        transform: translateX(0%);
     }
 }
 
