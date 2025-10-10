@@ -22,7 +22,7 @@ a {
 
 a.active {
     background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.33);
+    //box-shadow: 0 0 1rem rgba(0, 0, 0, 0.33);
 }
 
 nav a:hover {
@@ -134,11 +134,11 @@ div {
 div.center-screen {
     padding-right: 0;
     background: rgba(0, 0, 0, 0);
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    //box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 div.left-screen {
     padding-right: 15rem;
     background: rgba(0, 0, 0, 0.666);
-    box-shadow: 0 0 2rem rgb(0, 0, 0);
+    //box-shadow: 0 0 2rem rgb(0, 0, 0);
 }

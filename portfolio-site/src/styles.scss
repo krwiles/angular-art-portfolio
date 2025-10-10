@@ -28,7 +28,7 @@ body::before {
   bottom: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.801);
   pointer-events: none;
   z-index: 1;
 }
@@ -98,7 +98,6 @@ p {
   color: #e0e0e0;
 }
 
-/* Optional: add a consistent section style for spacing */
 section {
   margin-bottom: 2.5rem;
 }

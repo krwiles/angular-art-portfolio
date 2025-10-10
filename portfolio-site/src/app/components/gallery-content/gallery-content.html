@@ -17,9 +17,10 @@
 }
 
 @if (showLightBox()) {
-    <div class="lightbox" (click)="closeImage()">
+    <div class="lightbox" (click)="closeImage()" animate.enter="enter-lightbox" animate.leave="leave-lightbox">
         <div class="lightbox-content" (click)="$event.stopPropagation()">
             <img
+                animate.enter="enter-image"
                 class="lightbox-image"
                 src="{{ selectedImage()?.src }}"
                 alt="{{ selectedImage()?.alt }}"
